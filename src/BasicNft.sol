@@ -10,7 +10,7 @@ contract BasicNft is ERC721 {
     uint256 private s_tokenCounter;
 
     constructor() ERC721("Dogie", "DOG") {
-        s_tokenCounter =  0  ;
+        s_tokenCounter = 0;
     }
 
     function mintNft(string memory tokenUri) public {
@@ -19,9 +19,7 @@ contract BasicNft is ERC721 {
         s_tokenCounter = s_tokenCounter + 1;
     }
 
-    function tokenURI(
-        uint256 tokenId
-    ) public view override returns (string memory) {
+    function tokenURI(uint256 tokenId) public view override returns (string memory) {
         if (ownerOf(tokenId) == address(0)) {
             revert BasicNft__TokenUriNotFound();
         }

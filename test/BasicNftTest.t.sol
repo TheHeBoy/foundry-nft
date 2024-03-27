@@ -58,6 +58,4 @@ contract BasicNftTest is StdCheats, Test {
         mintBasicNft.mintNftOnContract(address(basicNft));
         assert(basicNft.getTokenCounter() == startingTokenCount + 1);
     }
-
-    // can you get the coverage up?
 }
